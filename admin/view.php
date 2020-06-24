@@ -3,6 +3,7 @@
 $courses = new WP_Query([
     'post_type' => 'stm-courses',
     'posts_per_page' => -1,
+    'post_status' => ['publish','draft','private'],
 ]);
 
 // $posts = new WP_Query([
@@ -38,6 +39,7 @@ if(isset($_POST['update'])) {
                     <th>Featured Image</th>
                     <th>Post Title</th>
                     <th>Post Category</th>
+                    <th>Post Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,6 +78,8 @@ if(isset($_POST['update'])) {
                         echo '<span class="inline-block mr-3 p-1 px-3 bg-blue-500 text-white rounded shadow">' . $category->name . '</span>';
                     }
                 echo '</td>';
+
+                echo '<td>' . get_post_status() . '</td>';
 
                 echo '</tr>';
                 endwhile;
