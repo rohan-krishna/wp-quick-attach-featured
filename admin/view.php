@@ -1,28 +1,22 @@
 <?php
-
-if ( ! class_exists( 'WP_List_Table' ) ) {
-	require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
-}
-
 // Meant for MasterStudy LMS
 $courses = new WP_Query([
-    'fields' => 'ids',
     'post_type' => 'stm-courses',
     'posts_per_page' => -1,
 ]);
 
-$posts = new WP_Query([
-    'fields' => 'ids',
-    'post_type' => 'post',
-    'posts_per_page' => -1
-]);
+// $posts = new WP_Query([
+//     'fields' => 'ids',
+//     'post_type' => 'post',
+//     'posts_per_page' => -1
+// ]);
 
-$all_ids = array_merge($courses->posts, $posts->posts);
+// $all_ids = array_merge($courses->posts, $posts->posts);
 
-$all_posts = new WP_Query([
-    'post__in' => $all_ids,
-    'posts_per_page' => -1
-]);
+// $all_posts = new WP_Query([
+//     'post__in' => $all_ids,
+//     'posts_per_page' => -1
+// ]);
 
 // var_dump(count($all_posts->posts));
 if(isset($_POST['update'])) {
@@ -36,7 +30,7 @@ if(isset($_POST['update'])) {
     <h1>Quick Attach Featured Image</h1>
     <hr>
 
-    <?php if ($all_posts->have_posts()) { ?>
+    <?php if ($courses->have_posts()) { ?>
 
         <table class="wp-list-table widefat striped posts mt-3 adv-table">
             <thead>
@@ -48,7 +42,7 @@ if(isset($_POST['update'])) {
             </thead>
             <tbody>
 
-            <?php while($all_posts->have_posts() ) : $all_posts->the_post(); ?>
+            <?php while($courses->have_posts() ) : $courses->the_post(); ?>
                 
                 <tr>
                 
