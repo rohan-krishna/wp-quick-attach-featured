@@ -33,7 +33,7 @@ if(isset($_POST['update'])) {
 
     <?php if ($courses->have_posts()) { ?>
 
-        <table class="wp-list-table widefat striped posts mt-3 adv-table">
+        <table class="wp-list-table widefat striped posts mt-3">
             <thead>
                 <tr>
                     <th>Featured Image</th>
