@@ -33,7 +33,7 @@ if(isset($_POST['update'])) {
 
     <?php if ($courses->have_posts()) { ?>
 
-        <table class="wp-list-table widefat striped posts mt-3">
+        <table class="wp-list-table widefat striped posts tw-mt-3">
             <thead>
                 <tr>
                     <th>Featured Image</th>
@@ -53,9 +53,9 @@ if(isset($_POST['update'])) {
                 echo '<td>';
 
                 if(has_post_thumbnail()) {
-                    echo '<img src=' . get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' ) . ' class="featured-image-wrapper border-0 shadow-md rounded" />';
+                    echo '<img src=' . get_the_post_thumbnail_url( get_the_ID(), 'thumbnail' ) . ' class="featured-image-wrapper tw-border-0 tw-shadow-md tw-rounded" />';
                 } else {
-                    echo '<img class="featured-image-wrapper border-0 shadow-md rounded" />';
+                    echo '<img class="featured-image-wrapper tw-border-0 tw-shadow-md tw-rounded" />';
                 }
                 ?>
 
@@ -64,9 +64,9 @@ if(isset($_POST['update'])) {
                 
                 echo '<input type="hidden" class="attachment_id" name="attachment_id" value='. get_post_thumbnail_id(get_the_ID()) . ' />';
                 echo '<input type="hidden" class="post-id" name="post_id" value=' . get_the_ID() . ' />';
-                echo '<input type="submit" name="update" class="save-btn button bg-blue-500 text-white hover:bg-blue-600 my-3 hidden" value="Submit"/>';
+                echo '<input type="submit" name="update" class="save-btn button tw-bg-blue-500 tw-text-white tw-hover:tw-bg-blue-600 tw-my-3 hidden" value="Submit"/>';
                 echo '</form>';
-                echo '<button class="button upload-image-button mt-3">Change Image</button>';
+                echo '<button class="button upload-image-button tw-mt-3">Change Image</button>';
                 echo '</td>';
 
 
