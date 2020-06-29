@@ -1,0 +1,16 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+@font-face {
+    font-family: 'SF Pro';
+    src: url("../fonts/sf-pro-display.ttf") format("ttf"),
+}
+
+@font-face {
+    font-family: 'G Sans';
+    src: url("../fonts/GoogleSansRegular.ttf") format("ttf"),
+}
+.qafi-wrapper {
+    font-family: 'G Sans', Arial, Helvetica, sans-serif !important;
+}
